@@ -241,6 +241,16 @@ func AddAlertRuleMigrations(mg *migrator.Migrator, defaultIntervalSeconds int64)
 			Cols: []string{"org_id", "dashboard_uid", "panel_id"},
 		},
 	))
+
+	mg.AddMigration("add rule_group_idx column to alert_rule", migrator.NewAddColumnMigration(
+		migrator.Table{Name: "alert_rule"},
+		&migrator.Column{
+			Name:     "rule_group_idx",
+			Type:     migrator.DB_Int,
+			Nullable: false,
+			Default:  "0",
+		},
+	))
 }
 
 func AddAlertRuleVersionMigrations(mg *migrator.Migrator) {
