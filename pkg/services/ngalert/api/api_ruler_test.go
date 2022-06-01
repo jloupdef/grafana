@@ -703,6 +703,18 @@ func TestRouteGetNamespaceRulesConfig(t *testing.T) {
 	})
 }
 
+func TestRouteGetRulesConfig(t *testing.T) {
+	t.Run("should return rules in group sorted by group index", func(t *testing.T) {
+
+	})
+}
+
+func TestRouteGetRulesGroupConfig(t *testing.T) {
+	t.Run("should return rules in group sorted by group index", func(t *testing.T) {
+
+	})
+}
+
 func createService(ac *acMock.Mock, store *store.FakeRuleStore, scheduler schedule.ScheduleService) *RulerSrv {
 	return &RulerSrv{
 		xactManager:     store,
